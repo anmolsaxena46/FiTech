@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GYM from Home</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: rgba(0,0,0,0.6);
+    }
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      animation: fadeInDown 1.5s ease;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 0;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      width: 60px; height: 4px;
+      background: #ffcc00;
+      display: block;
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.2);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .tweet {
+      background: rgba(255,255,255,0.15);
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      position: relative;
+      animation: slideUp 1s ease;
+    }
+    .tweet::before {
+      content: "💬";
+      position: absolute;
+      left: -30px;
+      top: 10px;
+      font-size: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-20px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes slideUp {
+      from {opacity:0; transform: translateY(30px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>💻🏋️ GYM from Home</h1>
+    <p>Stay fit, stay productive – bring the gym to your home office!</p>
+  </header>
+
+  <div class="container">
+    <!-- Virtual Gym Section -->
+    <section>
+      <h2>Virtual Gym Experience</h2>
+      <p style="text-align:center; max-width:800px; margin:auto;">
+        Our <strong>Virtual Gym</strong> connects you with certified trainers, live classes, 
+        and personalized diet plans – all from the comfort of your home. Whether you’re a busy 
+        employee or a fitness enthusiast, we make workouts accessible, fun, and effective.
+      </p>
+    </section>
+
+    <!-- Online Workouts -->
+    <section>
+      <h2>Online Workout Plans</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg" alt="Yoga">
+          <h3>Morning Yoga</h3>
+          <p>Boost energy and reduce stress with guided online yoga sessions.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg" alt="HIIT">
+          <h3>HIIT Classes</h3>
+          <p>Burn calories fast with high-intensity interval training.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg" alt="Strength">
+          <h3>Strength Training</h3>
+          <p>Gain muscle and stay strong with minimal equipment at home.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diet Plans -->
+    <section>
+      <h2>Diet & Nutrition</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Balanced Diet</h3>
+          <p>Personalized weekly meal plans designed for office-goers and fitness lovers.</p>
+        </div>
+        <div class="card">
+          <h3>Keto + Protein Plan</h3>
+          <p>Low-carb, high-protein diets tailored for weight loss and energy boost.</p>
+        </div>
+        <div class="card">
+          <h3>Vegetarian Plan</h3>
+          <p>Nutritious, plant-based diet designed for maximum health and productivity.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gym + Office Employee Photos -->
+    <section>
+      <h2>Work + Workout Lifestyle</h2>
+      <div class="grid">
+        <div class="card"><img src="https://images.pexels.com/photos/4498159/pexels-photo-4498159.jpeg" alt="Office + Gym"></div>
+        <div class="card"><img src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg" alt="Employee Fitness"></div>
+        <div class="card"><img src="https://images.pexels.com/photos/4047043/pexels-photo-4047043.jpeg" alt="Healthy Lifestyle"></div>
+      </div>
+    </section>
+
+    <!-- Fake Reviews / Tweets -->
+    <section>
+      <h2>What People Say</h2>
+      <div class="reviews">
+        <div class="tweet">"Never thought working out at home could be this fun! 🔥 #VirtualGym"</div>
+        <div class="tweet">"My productivity at work doubled after joining online yoga classes 🙌"</div>
+        <div class="tweet">"Love the balance of diet + training plans. Lost 5kg in 2 months! 💪"</div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 GYM from Home | Designed with ❤️ by a Professional Web Designer
+  </footer>
+</body>
+</html>

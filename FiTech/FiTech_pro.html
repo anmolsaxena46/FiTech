@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FiTech - Elite Customer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(120deg, #232526 0%, #414345 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(20,20,30,0.95);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 32px;
+      z-index: 1000;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      backdrop-filter: blur(8px);
+    }
+    .header-logo {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #00e6e6, #ffcc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    .header-nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .header-nav a:hover {
+      color: #ffcc00;
+    }
+    .elite-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      padding: 120px 20px 60px;
+      box-sizing: border-box;
+      background: rgba(30,30,40,0.7);
+      backdrop-filter: blur(2px);
+      border-radius: 0 0 32px 32px;
+      margin-bottom: 32px;
+    }
+    .elite-content {
+      flex: 1;
+      min-width: 320px;
+      max-width: 600px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 40px 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      backdrop-filter: blur(4px);
+    }
+    .elite-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #ffcc00;
+      letter-spacing: 1px;
+    }
+    .elite-features {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin: 0 0 24px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .elite-features li {
+      margin-bottom: 10px;
+      padding-left: 24px;
+      position: relative;
+    }
+    .elite-features li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #00e6e6;
+      font-weight: bold;
+    }
+    .elite-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 24px 0;
+      color: #00e6e6;
+    }
+    .elite-cta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .elite-btn {
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: 0.3s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      border: none;
+      cursor: pointer;
+      outline: none;
+      margin-bottom: 8px;
+    }
+    .elite-btn.demo {
+      background: linear-gradient(90deg, #00e6e6 0%, #00bfff 100%);
+      color: #222;
+    }
+    .elite-btn.buy {
+      background: linear-gradient(90deg, #ffcc00 0%, #ffa500 100%);
+      color: #222;
+    }
+    .elite-btn:hover {
+      opacity: 0.9;
+      transform: scale(1.06);
+    }
+    .elite-image {
+      flex: 1;
+      min-width: 320px;
+      max-width: 500px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .elite-image img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+      margin-bottom: 18px;
+    }
+    .elite-quote {
+      margin-top: 10px;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: #ffcc00;
+    }
+    .elite-sales {
+      margin-top: 32px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 24px 18px;
+      color: #fff;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      text-align: center;
+    }
+    .footer {
+      background: linear-gradient(90deg, #222 0%, #000 100%);
+      color: #fff;
+      padding: 40px 20px 32px 20px;
+      text-align: center;
+      font-size: 1rem;
+      box-sizing: border-box;
+      border-top-left-radius: 32px;
+      border-top-right-radius: 32px;
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) {
+      .elite-section { flex-direction: column; gap: 32px; }
+      .elite-content, .elite-image { max-width: 98vw; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-logo">FiTech</div>
+    <div class="header-nav">
+      <a href="index2.html">Home</a>
+      <a href="#">Get a Coach</a>
+      <a href="#">FiTech Plans</a>
+      <a href="signup.html">Signup</a>
+    </div>
+  </div>
+
+  <!-- Elite Section -->
+  <div class="elite-section">
+    <!-- Left Content -->
+    <div class="elite-content">
+      <h1 class="elite-title">FiTech Pro Customer</h1>
+      <p style="font-size:1.15rem; margin-bottom:18px;">
+        <b>Unleash your best self.</b> The <span style="color:#00e6e6;font-weight:bold;">Pro Plan</span> is crafted for those who want to break limits and achieve extraordinary results. Join a community of high performers and get the tools, coaching, and support to transform your fitness journey.
+      </p>
+      <ul class="elite-features">
+        <li>Personalized training with top coaches</li>
+        <li>Advanced progress tracking & analytics</li>
+        <!-- <li>Multiple workout formats (HIIT, Strength, Cardio, Yoga)</li>
+        <li>At-home live workouts & on-demand library</li> -->
+        <li>Exclusive access to FiTech Elite events</li>
+        <li>Priority support & nutrition guidance</li>
+      </ul>
+      <div class="elite-sales">
+        <b>Why choose Pro?</b><br>
+        <!-- <span style="color:#ffcc00;">✔ Proven results for ambitious individuals</span><br> -->
+        <span style="color:#00e6e6;">✔ 97% customer satisfaction</span><br>
+        <span style="color:#ffa500;">✔ 30-day money-back guarantee</span>
+      </div>
+      <p class="elite-price">Only ₹900 / month</p>
+      <div class="elite-cta">
+        <a href="#" class="elite-btn demo">Try Free Demo</a>
+        <a href="#" class="elite-btn buy">Buy Now</a>
+      </div>
+      <p style="margin-top:10px; font-size:1rem; color:#fff;">No commitment. Cancel anytime.</p>
+    </div>
+    <!-- Right Image + Quote -->
+    <div class="elite-image">
+      <div style="width:100%;display:flex;flex-direction:column;align-items:center;">
+  <img src="https://images.squarespace-cdn.com/content/v1/603a73e7e541b709395810f2/7ce535a7-8047-4ec4-99ce-5d3c2eb41d57/Adrien+lunges.JPEG" alt="Fitness Training" style="width:100%;height:700px;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.22);background:#222;object-fit:cover;min-height:180px;" onerror="this.style.display='none';">
+        <div style="margin-top:10px;font-size:1.1rem;color:#ffcc00;font-style:italic;text-align:center;">“Push yourself, because no one else is going to do it for you.”</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>📧 Email: xyz@mail.com &nbsp;|&nbsp; 📞 Contact: +91-9876543210</p>
+    <p>🌐 Instagram | Twitter | Legal Terms & Conditions</p>
+    <p style="margin-top:20px; font-size:0.9rem;">© 2025 FiTech. All Rights Reserved.</p>
+  </div>
+</body>
+</html>

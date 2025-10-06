@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FiTech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(120deg, #f9f9f9 0%, #e0e7ff 100%);
+      color: #222;
+      overflow-x: hidden;
+    }
+    .header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(20,20,30,0.95);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 25px;
+      z-index: 1000;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      backdrop-filter: blur(8px);
+    }
+    .header-logo {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #00e6e6, #ffcc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      /* text-fill-color: transparent; */
+    }
+    .header-nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .header-nav a:hover {
+      color: #ffcc00;
+    }
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background-attachment: fixed;
+      animation: zoomBg 20s infinite alternate;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+      z-index: 1;
+    }
+    .hero-title {
+      font-size: 7vw;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 0 32px #000;
+      text-align: center;
+      padding: 0 10px;
+      z-index: 2;
+      position: relative;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      padding: 80px 10px 40px 10px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.7);
+      box-sizing: border-box;
+      backdrop-filter: blur(2px);
+    }
+    .card {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      background: rgba(30,30,40,0.95);
+      border-radius: 18px;
+      padding: 32px 24px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(4px);
+    }
+    .card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+    }
+    .card h2 {
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .card-elite h2 { color: #ffcc00; }
+    .card-pro h2 { color: #00e6e6; }
+    .card-select h2 { color: #ff6666; }
+    .card-transform h2 { color: #ffa500; }
+    .card-workout h2 { color: #66ff99; }
+    .card-career h2 { color: #00bfff; }
+    .card-franchise h2 { color: #ff4500; }
+    .join-family {
+      text-align: center;
+      padding: 80px 10px 40px 10px;
+      background: rgba(255,255,255,0.8);
+      box-sizing: border-box;
+      backdrop-filter: blur(2px);
+    }
+    .join-title {
+      font-size: 6vw;
+      max-font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #222;
+      letter-spacing: 1px;
+    }
+    .footer {
+      background: linear-gradient(90deg, #222 0%, #000 100%);
+      color: #fff;
+      padding: 48px 20px 32px 20px;
+      text-align: center;
+      font-size: 1rem;
+      box-sizing: border-box;
+      border-top-left-radius: 32px;
+      border-top-right-radius: 32px;
+      margin-top: 40px;
+    }
+    @keyframes zoomBg {
+      0% { background-size:100%; }
+      100% { background-size:110%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-logo">FiTech</div>
+    <div class="header-nav">
+      <a href="#">Home</a>
+      <a href="gym_from_home.html">GYM from home</a>
+      <!-- <a href="#">FiTech Plans</a> -->
+      <a href="signup.html">Signup</a>
+    </div>
+  </div> 
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1 class="hero-title">We Are FiTech</h1>
+  </div>
+
+  <!-- Three Customer Cards -->
+  <div class="cards">
+    <div class="card card-elite">
+      <h2>FiTech Elite Customer</h2>
+      <p><a style="text-decoration: none; color: #fff;" href="FiTech_elite.html">Exclusive elite-level fitness solutions with personalized coaching and advanced performance tracking.</a></p>
+    </div>
+    <div class="card card-pro">
+      <h2>FiTech Pro Customer</h2>
+      <p><a style="text-decoration: none; color: #fff;" href="FiTech_pro.html">Professional training plans tailored for achieving peak performance with expert support.</a></p>
+    </div>
+    <div class="card card-select">
+      <h2>FiTech Select Customer</h2>
+      <p><a style="text-decoration: none; color: #fff;" href="fiTech_select.html">Specialized plans crafted for customers who want focused and result-driven transformations.</a></p>
+    </div>
+  </div>
+
+  <!-- Two Cards (Transform + Workout) -->
+  <div class="cards">
+    <div class="card card-transform">
+      <h2>Transform & Coach</h2>
+      <p>Transform your lifestyle with customized coaching and context-based fitness strategies.</p>
+    </div>
+    <div class="card card-workout">
+      <h2>Workout</h2>
+      <p>Engage in science-backed workouts designed to maximize strength, endurance, and flexibility.</p>
+    </div>
+  </div>
+
+  <!-- Join the FiTech Family -->
+  <div class="join-family">
+    <h1 class="join-title">Join the FiTech Family</h1>
+    <div class="cards">
+
+      <div class="card card-career">
+        <h2>Career at FiTech</h2>
+        <p>Join our team of experts and build a rewarding career in the world of fitness and health.</p>
+      </div>
+      <div class="card card-franchise">
+        <h2>Franchise</h2>
+        <p>Partner with FiTech and bring our premium fitness experience to your community.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>📧 Email: xyz@mail.com &nbsp;|&nbsp; 📞 Contact: +91-9315551940</p>
+    <p>🌐 Instagram | Twitter | Legal Terms & Conditions</p>
+    <p style="margin-top:20px; font-size:0.9rem;">© 2025 FiTech. All Rights Reserved.</p>
+  </div>
+</body>
+</html>   
