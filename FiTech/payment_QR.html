@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pay Here | FiTech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111, #000);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Go Back Button */
+    .back-btn {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      background: linear-gradient(135deg, #00e0ff, #007bff);
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 224, 255, 0.3);
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(135deg, #0099ff, #00e0ff);
+      box-shadow: 0 0 20px rgba(0, 224, 255, 0.6);
+      transform: scale(1.05);
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #00e0ff;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .qr-container {
+      background: #fff;
+      padding: 15px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 0 15px rgba(0, 224, 255, 0.2);
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    p {
+      margin-top: 25px;
+      color: #aaa;
+      font-size: 1em;
+    }
+
+    .footer {
+      margin-top: 35px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Go Back to Home Button -->
+  <a href="index2.html" class="back-btn">⟵ Back to Home</a>
+
+  <div class="container">
+    <h1>Pay Here</h1>
+    <h2>FiTech Secure Payment</h2>
+
+    <div class="qr-container">
+      <!-- Replace the src with your own QR code image -->
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=fitech@upi&pn=FiTech%20Payments&cu=INR&am=500" alt="QR Code for Payment">
+    </div>
+
+    <p>Scan this QR code using any UPI app (Google Pay, PhonePe, Paytm, etc.) to complete your payment securely.</p>
+
+    <div class="footer">
+      © 2025 FiTech. All Rights Reserved.
+    </div>
+  </div>
+</body>
+</html>

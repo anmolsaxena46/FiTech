@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout | FiTech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(20, 20, 20, 0.95);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1.5s ease;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #00bcd4;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    header a:hover {
+      color: #00bcd4;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      color: #fff;
+      position: relative;
+      animation: fadeIn 2s ease;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      animation: slideUp 1.5s ease;
+    }
+    .hero-content h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+    .btn {
+      background: #00bcd4;
+      color: #fff;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+    .btn:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+    .workout-section {
+      padding: 80px 60px;
+      text-align: center;
+      background: #111;
+      animation: fadeIn 1.8s ease;
+    }
+    .workout-section h2 {
+      font-size: 36px;
+      color: #00bcd4;
+      margin-bottom: 20px;
+    }
+    .workout-section p {
+      color: #bbb;
+      margin-bottom: 50px;
+      font-size: 18px;
+    }
+    .workout-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: slideUp 2s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 25px rgba(0, 188, 212, 0.3);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h3 {
+      color: #00bcd4;
+      margin-bottom: 10px;
+    }
+    .card-content p {
+      color: #ccc;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0a0a0a;
+      color: #777;
+      font-size: 14px;
+      border-top: 1px solid #222;
+    }
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+      animation: fadeIn 0.5s ease;
+    }
+    .popup iframe {
+      width: 80%;
+      height: 60vh;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+    }
+    .close-btn {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .close-btn:hover {
+      color: #00bcd4;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FiTech</h1>
+    <a href="index2.html">Home</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Workout From Home</h2>
+      <p>Stay fit and strong anywhere. Explore customized online workouts designed for your lifestyle.</p>
+      <button class="btn" onclick="document.querySelector('.workout-section').scrollIntoView({behavior: 'smooth'})">Explore Workouts</button>
+    </div>
+  </section>
+
+  <section class="workout-section">
+    <h2>Our Online Workouts</h2>
+    <p>Choose from our guided sessions to stay active at home with professional trainers.</p>
+
+    <div class="workout-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=800&q=80" alt="Yoga">
+        <div class="card-content">
+          <h3>Yoga</h3>
+          <p>Relax your mind and improve flexibility with guided yoga routines.</p>
+          <button class="btn" onclick="openVideo('https://www.youtube.com/embed/v7AYKMP6rOE')">Watch Video</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrH6zdQjxWQMYbWBMbyxSN60MCgwCV05Uvqw&s" alt="HIIT">
+        <div class="card-content">
+          <h3>HIIT</h3>
+          <p>Boost endurance and burn calories with intense HIIT workouts.</p>
+          <button class="btn" onclick="openVideo('https://www.youtube.com/embed/M0uO8X3_tEA')">Watch Video</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://i0.wp.com/www.muscleandfitness.com/wp-content/uploads/2019/08/Overweight-Guy-Bike-Bicycle-Spin-Sweat.jpg?quality=86&strip=all" alt="Strength">
+        <div class="card-content">
+          <h3>Strength</h3>
+          <p>Build muscle strength with effective home-based training.</p>
+          <button class="btn" onclick="openVideo('https://youtu.be/H9ftfqTZ_jc?t=5')">Watch Video</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=800&q=80" alt="Cardio">
+        <div class="card-content">
+          <h3>Cardio</h3>
+          <p>Keep your heart healthy with our energetic cardio sessions.</p>
+          <button class="btn" onclick="openVideo('https://www.youtube.com/embed/K44TJK9iNf8')">Watch Video</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="videoPopup" class="popup">
+    <span class="close-btn" onclick="closeVideo()">&times;</span>
+    <iframe id="videoFrame" src="" allowfullscreen></iframe>
+  </div>
+
+  <footer>
+    <p>© 2025 FiTech. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openVideo(url) {
+      document.getElementById('videoFrame').src = url + '?autoplay=1';
+      document.getElementById('videoPopup').style.display = 'flex';
+    }
+    function closeVideo() {
+      document.getElementById('videoFrame').src = '';
+      document.getElementById('videoPopup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
