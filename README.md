@@ -41,7 +41,7 @@ FiTech/
 
 
 ## 📜 License
-© 2025 FiTech. All Rights Reserved.  
+© 2026 FiTech. All Rights Reserved.  
 This project is for educational and demonstration purposes.
 
 ---
