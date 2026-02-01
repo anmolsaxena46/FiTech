@@ -13,7 +13,6 @@ FiTech is a modern, responsive fitness web application designed to showcase diff
 - **Join the Family**: Career and Franchise opportunities highlighted.
 - **Footer Section**: Contact details, social links, and legal information.
 
----
 
 ##  Technologies Used
 - **HTML5** for structure
