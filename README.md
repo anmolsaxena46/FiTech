@@ -20,7 +20,7 @@ FiTech is a modern, responsive fitness web application designed to showcase diff
 - **Google Fonts (Montserrat)** for typography
 - **Unsplash** for hero background image
 
----
+
 
 ##  Project Structure
 ```
