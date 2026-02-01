@@ -35,7 +35,6 @@ FiTech/
 
 ##  Contact
 - Email: `anmol.25161036@kiet.edu`  
-- Phone: `+91-7042095039`  
 - Social: https://www.linkedin.com/in/anmolsaxena45
 
 
