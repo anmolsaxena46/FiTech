@@ -39,7 +39,7 @@ FiTech/
 
 
 
-## 📜 License
+##  License
 © 2026 FiTech. All Rights Reserved.  
 This project is for educational and demonstration purposes.
 
