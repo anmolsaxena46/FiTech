@@ -21,10 +21,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 25px;
+      padding: 18px 15px;
       z-index: 1000;
       box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px); 
     }
     .header-logo {
       font-size: 2.2rem;
@@ -55,7 +55,7 @@
       align-items: center;
       background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       background-attachment: fixed;
-      animation: zoomBg 20s infinite alternate;
+      animation: zoomBg 5s infinite alternate;
       position: relative;
     }
     .hero::after {
@@ -112,8 +112,10 @@
     .card-select h2 { color: #ff6666; }
     .card-transform h2 { color: #ffa500; }
     .card-workout h2 { color: #66ff99; }
-    .card-career h2 { color: #00bfff; }
-    .card-franchise h2 { color: #ff4500; }
+    .card-career a h2 { color: #00bfff; }
+    .card-career a p { color: #00bfff; }
+    .card-franchise a h2 { color: #ff4500; }
+    .card-franchise a p { color: #ff4500; }
     .join-family {
       text-align: center;
       padding: 80px 10px 40px 10px;
@@ -153,6 +155,7 @@
     <div class="header-nav">
       <a href="#">Home</a>
       <a href="gym_from_home.html">GYM from home</a>
+      <a href="https://chatgpt.com/g/g-hCMGDaRdP-fitness-coach" target="_blank">Fitness-coach</a>
       <!-- <a href="#">FiTech Plans</a> -->
       <a href="signup.html">Signup</a>
     </div>
@@ -183,11 +186,11 @@
   <div class="cards">
     <div class="card card-transform">
       <h2>Transform & Coach</h2>
-      <p>Transform your lifestyle with customized coaching and context-based fitness strategies.</p>
+      <a href="card_transform.html" style="text-decoration: none; color: #fff;"><p>Transform your lifestyle with customized coaching and context-based fitness strategies.</p></a>
     </div>
     <div class="card card-workout">
       <h2>Workout</h2>
-      <p>Engage in science-backed workouts designed to maximize strength, endurance, and flexibility.</p>
+      <a href="card_workout.html" style="text-decoration: none; color: #fff;"><p>Engage in science-backed workouts designed to maximize strength, endurance, and flexibility.</p></a>
     </div>
   </div>
 
@@ -196,13 +199,13 @@
     <h1 class="join-title">Join the FiTech Family</h1>
     <div class="cards">
 
-      <div class="card card-career">
+      <div class="card card-career"><a href="career_fit.html" style="text-decoration: none;">
         <h2>Career at FiTech</h2>
-        <p>Join our team of experts and build a rewarding career in the world of fitness and health.</p>
+        <p>Join our team of experts and build a rewarding career in the world of fitness and health.</p></a>
       </div>
-      <div class="card card-franchise">
+      <div class="card card-franchise"><a href="franchise.html" style="text-decoration: none;">
         <h2>Franchise</h2>
-        <p>Partner with FiTech and bring our premium fitness experience to your community.</p>
+        <p>Partner with FiTech and bring our premium fitness experience to your community.</p></a>
       </div>
     </div>
   </div>
@@ -214,4 +217,30 @@
     <p style="margin-top:20px; font-size:0.9rem;">© 2025 FiTech. All Rights Reserved.</p>
   </div>
 </body>
+
+<script>
+  // --- SERVER CODE ---
+const jwt = require('jsonwebtoken');
+
+const secret = process.env.CHATBOT_IDENTITY_SECRET; // Your chatbase secret key (should be stored as a secret not in the code)
+
+const user = await getSignedInUser(); // Get the current user signed in to your site
+
+const token = jwt.sign(
+    { 
+        user_id: user.id, // Your user's id
+        email: user.email, // User's email
+        stripe_accounts: user.stripe_accounts, // User's stripe accounts for stripe integration
+        // ... other custom attributes
+    }, 
+    secret, 
+    { expiresIn: '1h' }
+);
+
+// --- CLIENT CODE ---
+const token1 = await getUserToken(); // Get the token from your server
+window.chatbase('identify', { token1 }); // identify the user with Chatbase
+
+</script>
+
 </html>   

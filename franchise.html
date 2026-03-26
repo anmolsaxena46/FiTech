@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>FiTech Franchise — Partner with FiTech</title>
+<style>
+  :root{--bg:#071322;--card:#0b1220;--accent:#1dd3a7;--accent2:#ff6b6b;--muted:#9aa4b2;--radius:12px;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:linear-gradient(180deg,#04101a 0%,#071322 100%);color:#eaf2f8;padding:28px}
+  .wrap{max-width:1100px;margin:0 auto}
+  header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+  .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),#ffd6a5);display:flex;align-items:center;justify-content:center;color:#111;font-weight:800}
+  .hero{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:center;margin-top:6px}
+  .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:24px;border-radius:14px;border:1px solid rgba(255,255,255,0.04)}
+  h1{margin:0;font-size:28px}
+  p.lead{color:var(--muted);line-height:1.5}
+  .partner-list{display:flex;gap:12px;margin-top:14px}
+  .partner-item{background:rgba(255,255,255,0.03);padding:10px;border-radius:10px;min-width:120px;text-align:center}
+  .badge{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#071322;font-weight:700}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+  .gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
+
+  .two-col{display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:20px}
+  .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+  h3{margin:0 0 8px 0}
+  .list{color:var(--muted);line-height:1.5}
+  .cta-row{display:flex;gap:10px;margin-top:12px}
+  .btn{padding:10px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+  .btn-primary{background:linear-gradient(90deg,var(--accent),#2ee6c3);color:#052a23}
+  .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+  .meta{font-size:13px;color:var(--muted);margin-top:8px}
+  .faq{margin-top:12px}
+  .faq-item{margin-bottom:10px}
+  .footer{margin-top:22px;color:var(--muted);font-size:14px}
+
+  @media(max-width:920px){.hero{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand"><div class="logo">FT</div>FiTech</div>
+      <nav style="color:var(--muted)"><a href="index2.html" style="color:var(--muted);text-decoration:none;margin-right:14px">Home</a><a href="#franchise" style="color:var(--muted);text-decoration:none">Franchise</a></nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1 id="franchise">Franchise with FiTech</h1>
+        <p class="lead">Partner with FiTech and bring our premium fitness experience to your community. We provide proven systems, brand support and training so you can open faster with confidence.</p>
+
+        <div class="partner-list">
+          <div class="partner-item"><div style="font-weight:700">Turnkey Setup</div><div class="meta">Site, equipment & design</div></div>
+          <div class="partner-item"><div style="font-weight:700">Training</div><div class="meta">Certified coach programs</div></div>
+          <div class="partner-item"><div style="font-weight:700">Marketing</div><div class="meta">Local + national campaigns</div></div>
+        </div>
+
+        <div class="gallery" aria-hidden>
+          <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=800&auto=format&fit=crop" alt="gym interior">
+          <img src="https://cdn.prod.website-files.com/66c501d753ae2a8c705375b6/67fe04174c28e25a815bc5e1_67f015f283767dff5fd40fa1_675aee94d22bf93df17e4b5f_HowToFindAPersonalTrainer-2-768x512.jpeg" alt="trainer coaching">
+          <img src="https://www.wenzelcoaching.com/wp-content/uploads/2018/10/group-holding-plank.jpg" alt="group class">
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:14px;align-items:center">
+          <div class="badge">Premium Partner</div>
+          <div style="color:var(--muted);font-size:14px">Franchise opportunities available in select cities</div>
+        </div>
+
+      </div>
+
+      <aside style="display:flex;flex-direction:column;gap:12px">
+        <div class="card">
+          <h3>Why partner with FiTech?</h3>
+          <ul class="list">
+            <li><strong>Proven model</strong> — operational playbooks & training.</li>
+            <li><strong>Brand & tech</strong> — booking app, CRM and marketing kits.</li>
+            <li><strong>Ongoing support</strong> — field visits, campaigns & continuous education.</li>
+          </ul>
+          <div class="cta-row">
+            <button class="btn btn-primary" onclick="openContact()">Request Franchise Pack</button>
+            <button class="btn btn-outline" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">See FAQs</button>
+          </div>
+        </div>
+
+        <div class="card" style="text-align:center">
+          <div style="font-size:13px;color:var(--muted)">Estimated initial investment</div>
+          <div style="font-weight:800;font-size:20px;margin-top:8px">₹15L — ₹1.5Cr*</div>
+          <div class="meta">(varies by format & city)</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="two-col">
+      <div class="card">
+        <h3>What we provide</h3>
+        <ul class="list">
+          <li>Complete site selection & store design guidance</li>
+          <li>Equipment sourcing and supplier network</li>
+          <li>FiTech training academy for managers & trainers</li>
+          <li>Marketing launch package and ongoing campaigns</li>
+          <li>Member management software & reporting</li>
+        </ul>
+
+        <h3 style="margin-top:12px">Franchise process</h3>
+        <ol class="list">
+          <li>Inquiry & qualification</li>
+          <li>Discovery call & territory review</li>
+          <li>Agreement & site build-out</li>
+          <li>Training, launch & ongoing support</li>
+        </ol>
+      </div>
+
+      <div>
+        <div class="card">
+          <h3>Franchisee requirements</h3>
+          <ul class="list">
+            <li>Passion for fitness & community</li>
+            <li>Ability to invest initial capital and working capital</li>
+            <li>Commitment to our brand standards and training</li>
+          </ul>
+          <div class="meta">*Exact investment figures provided in Franchise Pack</div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Frequently asked questions</h3>
+          <div id="faq" class="faq">
+            <div class="faq-item"><strong>How much is the franchise fee?</strong><div class="meta">Franchise fees vary by format; typical ranges are shared in our pack.</div></div>
+            <div class="faq-item"><strong>Do you help with funding?</strong><div class="meta">We provide lender introductions and SBA guidance where applicable.</div></div>
+            <div class="faq-item"><strong>What support do I get?</strong><div class="meta">Full training, marketing, operations manuals, and field support.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:18px" class="card">
+      <h3>Gallery — FiTech spaces</h3>
+      <div class="gallery" style="margin-top:12px">
+        <img src="https://ironbullstrength.com/cdn/shop/files/commercial-gym-machines.webp?v=1731091460&width=3840" alt="gym">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhlJTIwZ3ltfGVufDB8fDB8fHww" alt="weights">
+        <img src="https://images.indianexpress.com/2023/04/cardio_HS_getty.jpg" alt="cardio">
+      </div>
+    </section>
+
+    <section style="margin-top:18px;display:flex;gap:12px;align-items:flex-start">
+      <div style="flex:1" class="card">
+        <h3>What to expect in the Franchise Pack</h3>
+        <ul class="list">
+          <li>Detailed investment & cashflow guide</li>
+          <li>Franchise Agreement summary & key terms</li>
+          <li>Operations & training curriculum</li>
+          <li>Marketing plan and launch checklist</li>
+        </ul>
+      </div>
+
+      <div style="width:320px" class="card">
+        <h3>Ready to partner?</h3>
+        <p class="meta">Fill the short form and our franchise team will contact you within 2 business days.</p>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <input id="f_name" placeholder="Full name" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <input id="f_email" placeholder="Email" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff">
+        </div>
+        <button class="btn btn-primary" style="margin-top:10px;width:100%" onclick="submitFranchise()">Request Pack</button>
+        <div id="sentMsg" style="display:none;margin-top:8px;color:#9eead1">Thanks — we've received your request.</div>
+      </div>
+    </section>
+
+    <footer class="footer">*Investment ranges are indicative and vary by country, city and store format. For guidance on franchise evaluation and financing see SBA and International Franchise Association resources.</footer>
+  </div>
+
+<script>
+function openContact(){document.getElementById('f_name').scrollIntoView({behavior:'smooth'});}
+function submitFranchise(){
+  var name=document.getElementById('f_name').value.trim();
+  var email=document.getElementById('f_email').value.trim();
+  if(!name||!email){alert('Please enter name and email');return}
+  document.getElementById('sentMsg').style.display='block';
+}
+</script>
+</body>
+</html>

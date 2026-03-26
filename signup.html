@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FiTech - Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0; font-family:Arial, sans-serif; background:#f4f4f4; color:#333; overflow-x:hidden;">
+
+  <!-- Header -->
+  <div style="position:fixed; top:0; left:0; width:100%; background:#000; color:#fff; display:flex; justify-content:space-between; align-items:center; padding:15px 20px; z-index:1000; flex-wrap:wrap; box-sizing:border-box;">
+    <div style="font-size:24px; font-weight:bold; letter-spacing:2px;">FiTech</div>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; margin-top:5px;">
+      <a href="index2.html" style="color:white; text-decoration:none; margin:5px 10px; font-size:15px;">Home</a>
+      <a href="#" style="color:white; text-decoration:none; margin:5px 10px; font-size:15px;">Get a Coach</a>
+      <a href="#" style="color:white; text-decoration:none; margin:5px 10px; font-size:15px;">FiTech Plans</a>
+      <a href="signup.html" style="color:#00e6e6; font-weight:bold; text-decoration:none; margin:5px 10px; font-size:15px;">Signup</a>
+    </div>
+  </div>
+
+  <!-- Signup Section -->
+  <div style="height:100vh; display:flex; justify-content:center; align-items:center; background:url('https://images.unsplash.com/photo-1599058917212-d750089bcad3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; background-attachment:fixed; padding:20px; box-sizing:border-box;">
+    <div style="background:rgba(0,0,0,0.85); color:#fff; padding:40px 30px; border-radius:15px; width:100%; max-width:400px; box-shadow:0 6px 25px rgba(0,0,0,0.6); text-align:center; animation:fadeIn 1.5s ease;">
+      <h1 style="margin-bottom:25px; font-size:28px; color:#00e6e6;">Join FiTech</h1>
+      
+      <!-- Form -->
+      <form id="myform" style="display:flex; flex-direction:column; gap:15px;">
+        <input id="username" type="text" placeholder="Full Name" style="padding:12px; border-radius:8px; border:none; outline:none; font-size:15px;">
+        <input id="email" type="email" placeholder="Email Address" style="padding:12px; border-radius:8px; border:none; outline:none; font-size:15px;">
+        <input id="password" type="password" placeholder="Password" style="padding:12px; border-radius:8px; border:none; outline:none; font-size:15px;">
+        <input id="cpassword" type="password" placeholder="Confirm Password" style="padding:12px; border-radius:8px; border:none; outline:none; font-size:15px;">
+        
+        <button id="submit" type="submit" style="padding:14px; border:none; border-radius:8px; background:#00e6e6; color:#000; font-weight:bold; font-size:16px; cursor:pointer; transition:0.3s;">Sign Up</button>
+      </form>
+
+      <p style="margin-top:15px; font-size:14px;">Already have an account? 
+        <a href="#" style="color:#ffcc00; text-decoration:none;">Login</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background:#000; color:#fff; padding:30px 20px; text-align:center; font-size:14px;">
+    <p>📧 Email: xyz@mail.com | 📞 Contact: +91-9876543210</p>
+    <p>🌐 Instagram | Twitter | Legal Terms & Conditions</p>
+    <p style="margin-top:15px; font-size:12px;">© 2025 FiTech. All Rights Reserved.</p>
+  </div>
+
+  <!-- Animations -->
+  <style>
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(-20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    button:hover {
+      background:#ffcc00;
+      color:#000;
+    }
+  </style>
+
+</body>
+
+<script>
+    const form = document.getElementById('myform');
+    console.log("Hello");
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        validateform();
+    }); 
+    function validateform() {
+        const username = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+ //     const phone = document.getElementById('num').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const cpassword = document.getElementById('cpassword').value.trim();
+
+        if (!username || !email || !password || !cpassword) {
+        alert('All fields are required. Please fill in every field.');
+        return;
+      }
+
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!email.match(emailPattern)) {                           // Email validation
+            alert('Please enter a valid email address.');            // if(!emailpattern.test(email))
+            return;
+        }
+        // const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+        // if (!phone.match(phonePattern)) {                           // Phone number validation
+        //     alert('Please enter a valid phone number (format: 123-456-7890).');
+        //     return;
+        // }
+        // if(phone.length!=10 || isNaN(phone)) {
+        //     alert('Phone number must be 10 digits long.');
+        //     return;
+        // }
+        if(!password.length>=8) {                     // Password validation
+            alert('Password must be at least 8 characters long.');
+            return;
+        }
+
+        if (password !== cpassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+
+ 
+        console.log('Form Submitted');
+        console.log('Username:', username);
+        console.log('Email:', email);
+        console.log('Password:', password);
+ 
+        alert('Registration Successful!');
+        form.reset(); 
+        window.location.href = "index2.html"; 
+    };
+
+
+</script>
+
+
+
+</html>

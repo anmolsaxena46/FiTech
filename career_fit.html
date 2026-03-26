@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FiTech — Career at FiTech</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff6b6b;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      font-family: Inter, system-ui;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,107,107,0.06), transparent),
+                  linear-gradient(180deg, #071022 0%, #03101a 100%);
+      color:#e6eef6;
+      font-size:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+    }
+
+    header{
+      position:fixed;
+      top:20px;
+      left:50%;
+      transform:translateX(-50%);
+      width:calc(100% - 80px);
+      max-width:1100px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      z-index:40;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      font-weight:700;font-size:22px;
+    }
+    .logo{
+      width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffd6a5);
+      display:flex;align-items:center;justify-content:center;color:#111;font-weight:800;font-size:18px;
+    }
+    .nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+
+    .container{
+      width:100%;max-width:1100px;margin-top:80px;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;
+    }
+
+    /* Left */
+    .info{padding:28px;}
+    h1{margin:0 0 12px 0;font-size:32px}
+    p.lead{color:var(--muted);margin:0 0 20px 0;line-height:1.5;font-size:18px}
+
+    /* Card */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:22px;box-shadow:0 6px 30px rgba(3,8,20,0.6);border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+    .card h2{margin:0;font-size:24px}
+    .pill{padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-size:13px;margin-top:6px}
+
+    .features{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+    .feature{display:flex;gap:12px;align-items:flex-start}
+    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,var(--accent),#ff9f9f);margin-top:6px}
+    .feature p{margin:0;color:var(--muted);line-height:1.4}
+
+    .apply-row{display:flex;gap:12px;margin-top:20px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#ff9f9f);color:#111}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Right */
+    .visual{display:flex;flex-direction:column;gap:20px;align-items:center;}
+    .visual-box{
+      width:100%;height:260px;border-radius:14px;
+      background-size:cover;background-position:center;
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 12px 30px rgba(2,6,15,0.5);
+    }
+
+    /* Modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,8,20,0.7);z-index:70;padding:20px}
+    .modal.open{display:flex}
+    .modal-card{width:100%;max-width:420px;background:#071322;border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.04)}
+    .field{display:flex;flex-direction:column;margin-bottom:16px}
+    .field label{font-size:13px;color:var(--muted);margin-bottom:6px}
+    .field input{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:#fff}
+
+    @media(max-width:880px){.container{grid-template-columns:1fr}.visual{order:-1}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><div class="logo">FT</div>FiTech</div>
+    <nav class="nav"><a href="index2.html">Home</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <main class="container">
+    <section class="info">
+      <h1>Join our FiTech Family</h1>
+      <p class="lead">Become part of a passionate community advancing health, fitness and lifestyle transformation.</p>
+
+      <article class="card">
+        <h2>Career at FiTech</h2>
+        <div class="pill">Work with experts • Grow fast • Flexible shifts</div>
+
+        <p style="margin-top:14px;color:var(--muted)">Join our expert team and build a rewarding career where your passion for fitness becomes your profession.</p>
+
+        <div class="features">
+          <div class="feature"><div class="dot"></div><p>Competitive salary with performance bonuses</p></div>
+          <div class="feature"><div class="dot"></div><p>Work with certified trainers, coaches and nutrition experts</p></div>
+          <div class="feature"><div class="dot"></div><p>Access to professional training programs and FiTech tools</p></div>
+        </div>
+
+        <div class="apply-row">
+          <button class="btn btn-primary" onclick="openApply()">Apply Now</button>
+          <button class="btn btn-outline">Learn More</button>
+        </div>
+      </article>
+    </section>
+
+    <aside class="visual">
+      <div class="visual-box" style="background-image:url('https://images.unsplash.com/photo-1571019613576-2b21c06f3d41?q=80&w=1200&auto=format&fit=crop');"></div>
+      <div class="visual-box" style="height:200px;background-image:url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1?q=80&w=1200&auto=format&fit=crop');"></div>
+    </aside>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="applyModal">
+    <div class="modal-card">
+      <h3>Apply for FiTech Career</h3>
+
+      <div class="field"><label>Name</label><input id="name"></div>
+      <div class="field"><label>Email</label><input id="email"></div>
+      <div class="field"><label>Role You Want to Apply For</label><input id="role"></div>
+
+      <button class="btn btn-primary" onclick="submitForm()">Submit</button>
+      <button class="btn btn-outline" onclick="closeApply()" style="margin-top:10px">Cancel</button>
+    </div>
+  </div>
+
+<script>
+function openApply(){ document.getElementById('applyModal').classList.add('open'); }
+function closeApply(){ document.getElementById('applyModal').classList.remove('open'); }
+function submitForm(){ alert("Application Submitted Successfully!"); closeApply(); }
+</script>
+
+</body>
+</html>
