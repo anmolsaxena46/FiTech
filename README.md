@@ -1,7 +1,7 @@
 # FiTech
 ---
 
-FiTech is a modern, responsive fitness web application designed to showcase different stakeholder plans, subscription programs, and career opportunities. It combines a sleek UI with gradient backgrounds, interactive cards, and a fixed navigation header for a professional look.
+FiTech is a modern, responsive fitness web application designed to showcase different stakeholder plans, subscription programs, and career opportunities. It combines a sleek User Interface with gradient backgrounds, interactive cards, and a fixed navigation header for a professional look.
 
 
 ##  Features
